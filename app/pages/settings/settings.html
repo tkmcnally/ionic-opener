@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="settings">
+    <form #settingsForm="ngForm" class="list">
+        <ion-item>
+            <ion-label>Enable Profile</ion-label>
+            <ion-toggle value="enableProfile" [(ngModel)]="settings.enableProfile" required>
+            </ion-toggle>
+            <!--<input type="radio" ng-model="settings.enableProfile">-->
+        </ion-item>
+        <ion-row responsive-sm>
+            <ion-col>
+                <button (click)="setProfileStatus(settingsForm)" type="submit" primary block>Submit</button>
+            </ion-col>
+        </ion-row>
+    </form>
+</ion-content>
